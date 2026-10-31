@@ -1,0 +1,21 @@
+import {assemble} from './assembler.js';
+import {disassemble,hex} from './isa.js';
+import {formatTrainerInstruction} from './trainer-syntax.js';
+export const EXPERIMENTS=[['addition','Register addition · lab sheet'],['ramp','IC-02 sheet · ramp X + Y'],['triangle','IC-02 sheet · triangle'],['square','IC-02 sheet · square'],['sine','DAC · sine wave'],['id','ID sheet · 425050 on SC-01'],['combined','ID + DAC simultaneously'],['adc','ADC0809 → DAC loopback'],['motor','Stepper sheet · clockwise'],['motor-reverse','Stepper sheet · anticlockwise'],['motor-half','Stepper · half-step'],['timer','8253 · mode 3 square wave']];
+export function experimentProgram(kind,lab){const p=lab.mapping[0].base,q=lab.mapping[1].base,h=n=>hex(n)+'H',out=n=>'OUT '+h(n),init=`MVI A,80H\n${out(p+3)}`,id=`MVI A,80H\n${out(q+3)}\n`+Array.from({length:3},(_,i)=>`MVI A,${lab.id.slice(i*2,i*2+2)}H\n${out(q+i)}`).join('\n');let source='',notes='',wiring='dac';
+  const delay=`DELAY: PUSH B\nMVI B,08H\nD1: DCR B\nJNZ D1\nPOP B\nRET`;
+  if(kind==='addition'){source='MVI A,09H\nMVI B,04H\nADD B\nRST 5';notes='The lab sheet example. Reset, then R → A displays 0D. RST 5 returns to the monitor.';}
+  else if(kind==='id'){source=id+'\nHLT';wiring='id';notes='Connect trainer CN1 to SC-01 CN1 with the 50-pin CPU bus. The study card has its own 8255 at 30–33. Each port holds two decimal digits as packed BCD. PA = first pair, PB = middle pair, PC = final pair. The eight LEDs show the two four-bit BCD nibbles.';}
+  else if(kind==='adc'){source=`MVI A,8AH\n${out(p+3)}\nCONVERT: MVI A,08H\n${out(p+2)}\nMVI A,00H\n${out(p+2)}\nWAIT: IN ${h(p+2)}\nANI 80H\nJZ WAIT\nIN ${h(p+1)}\n${out(p)}\nJMP CONVERT`;wiring='adc';notes='PC3 is tied to ALE/START; PC0–2 select channel 0, PC7 is EOC, PB reads the ADC, PA drives DAC X. The ADC has a finite conversion delay. The DAC amplifier inverts its output.';}
+  else if(kind.startsWith('motor')){const seq=kind==='motor-half'?[0xF9,0xF1,0xF5,0xF4,0xF6,0xF2,0xFA,0xF8]:kind==='motor-reverse'?[0xFA,0xF6,0xF5,0xF9]:[0xF9,0xF5,0xF6,0xFA];source=`MVI A,80H\n${out(q+3)}\nLOOP: `+seq.map(v=>`MVI A,${h(v)}\n${out(q)}\nCALL DELAY1`).join('\n')+'\nJMP LOOP\nDELAY1: LXI D,0000H\nCALL 03A6H\nRET';wiring='motor';notes='Matches the supplied stepper sheet: control 33, PA 30, sequence F9 F5 F6 FA for clockwise, reversed for anticlockwise. CALL 03A6 uses the installed compatibility delay ROM. The motor uses the 30–33 PPI, so this preset unplugs the SC-01 CPU bus; DAC/ADC remain on the separate 00–03 PPI.';}
+  else if(kind==='timer'){source=`MVI A,36H\nOUT ${h(lab.timerBase+3)}\nMVI A,E8H\nOUT ${h(lab.timerBase)}\nMVI A,03H\nOUT ${h(lab.timerBase)}\nHLT`;notes='8253 channel 0, mode 3, divisor 1000. Set its clock in Connections, and patch CN2 OUT0 to a scope tip plus ground. The counter continues after CPU HLT.';}
+  else{const prefix=(kind==='combined'?id+'\n':'')+init+'\n';if(kind==='triangle')source=prefix+`START: MVI A,00H\nPOS: ${out(p)}\nINR A\nCPI FFH\nJNZ POS\nNEG: DCR A\n${out(p)}\nCPI 00H\nJNZ NEG\nJMP START`;
+    else if(kind==='square')source=prefix+`LOOP: MVI A,00H\n${out(p)}\nCALL DELAY\nMVI A,FFH\n${out(p)}\nCALL DELAY\nJMP LOOP\nDELAY: MVI C,FFH\nLOOP1: DCR C\nJNZ LOOP1\nRET`;
+    else if(kind==='sine')source=prefix+'LOOP: '+Array.from({length:32},(_,i)=>`MVI A,${h(Math.round(127.5+127.5*Math.sin(i*2*Math.PI/32)))}\n${out(p)}\nCALL DELAY`).join('\n')+'\nJMP LOOP\n'+delay;
+    else source=prefix+`MVI A,00H\nLOOP1: ${out(p)}\n${out(p+1)}\nINR A\nJMP LOOP1`;
+    notes='IC-02 8085 sheet: PA 00 → X-OUT, PB 01 → Y-OUT, control 03. Ramp writes both X and Y. Square and triangle retain the exact instruction/byte layout from page 1. The 8086 programs on page 2 use a different CPU and are reference material only. Connect CN4 to IC-02, CN5 supply, probe tip to output and clip to GND.';
+  }
+  const assembled=assemble('ORG 2000H\n'+source);if(!assembled.ok)throw new Error(assembled.errors.map(e=>e.message).join('; '));
+  const instructions=assembled.listing.filter(r=>r.entry&&r.bytes.length).map(r=>({address:r.address,text:formatTrainerInstruction(disassemble(assembled.memory,r.address))}));
+  return {kind,wiring,notes,source:instructions.map(r=>r.text).join('\n')+'\n',assemblySource:'ORG 2000H\n'+source,lines:instructions.map(r=>r.text),instructions};
+}

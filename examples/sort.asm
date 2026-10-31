@@ -1,0 +1,26 @@
+ORG 2000H
+LXI SP, 0FFFFH
+MVI B, 09H
+OUTER:
+    LXI H, DATA
+    MOV C, B
+INNER:
+    MOV A, M
+    INX H
+    CMP M
+    JC ORDERED
+    JZ ORDERED
+    MOV D, M
+    MOV M, A
+    DCX H
+    MOV M, D
+    INX H
+ORDERED:
+    DCR C
+    JNZ INNER
+    DCR B
+    JNZ OUTER
+HLT
+ORG 3000H
+DATA: DB 92, 7, 45, 11, 255, 0, 18, 63, 1, 30
+END 2000H

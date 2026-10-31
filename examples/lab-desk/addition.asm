@@ -1,0 +1,4 @@
+MVI A 09
+MVI B 04
+ADD B
+RST 5
