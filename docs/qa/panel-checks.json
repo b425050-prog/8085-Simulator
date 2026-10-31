@@ -1,0 +1,66 @@
+[
+  {
+    "button": "single",
+    "state": "Menu channel1; Coupling DC; BW Limit Off; Volts/Div Coarse; Probe 10X; Invert Off; Running; No connected signal; Single sequence armed"
+  },
+  {
+    "button": "force",
+    "state": "Menu channel1; Coupling DC; BW Limit Off; Volts/Div Coarse; Probe 10X; Invert Off; Stopped; Signal acquired; Single acquisition complete"
+  },
+  {
+    "button": "run",
+    "state": "Menu channel1; Coupling DC; BW Limit Off; Volts/Div Coarse; Probe 10X; Invert Off; Running; Signal acquired; "
+  },
+  {
+    "button": "measure",
+    "state": "Menu measure; CH2 Frequency; CH2 Pk-Pk; CH2 Mean; CH2 Cyc RMS; CH2 Period; Running; Signal acquired; "
+  },
+  {
+    "button": "cursor",
+    "state": "Menu cursor; Type Off; Source CH2; Cursor 1 20%; Cursor 2 70%; Select Cursor 1; Running; Signal acquired; "
+  },
+  {
+    "button": "math",
+    "state": "Menu math; Operation -; Source CH1; FFT Window Hanning; FFT Scale Vrms; Math On; Running; Signal acquired; "
+  },
+  {
+    "button": "ref",
+    "state": "Menu ref; Ref A Off; Ref B Off; Save CH1 To Ref A; Save CH2 To Ref B; Clear refs A + B; Running; Signal acquired; "
+  },
+  {
+    "button": "display",
+    "state": "Menu display; Type Vectors; Persist Off; Format YT; Contrast 70%; Menu Off; Running; Signal acquired; "
+  },
+  {
+    "button": "acquire",
+    "state": "Menu acquire; Mode Sample; Averages 16; Record 2500 points; Sample rate 100 kS/s; Run/Stop Run; Running; Signal acquired; "
+  },
+  {
+    "button": "trigger",
+    "state": "Menu trigger; Type Edge; Source CH2; Slope Rising; Mode Auto; Coupling DC; Running; Signal acquired; "
+  },
+  {
+    "button": "horiz",
+    "state": "Menu horizontal; Main Main; Window Zone Select; Window Off; Set To Zero 0.00 µs; Trig Knob Level; Running; Signal acquired; "
+  },
+  {
+    "button": "help",
+    "state": "Menu help; Topic Overview; Controls Turn / wheel knobs; Probe Tip + ground needed; Keyboard LCD one line / Enter; Exit Help Back; Running; Signal acquired; "
+  },
+  {
+    "button": "utility",
+    "state": "Menu utility; System Status Firmware / config; Limit Test Off; Data Logging Off; Self Cal Signal-path check; Language English; Running; Signal acquired; "
+  },
+  {
+    "button": "save",
+    "state": "Menu save; Action Save Setup; Save To Memory; Setup 1; Save Internal; File Utilities 0 files; Running; Signal acquired; "
+  },
+  {
+    "button": "autorange",
+    "state": "Menu autorange; Autorange On; Vertical Enabled; Horizontal Enabled; Range Now Apply; Return Waveform; Running; Signal acquired; Autoset complete"
+  },
+  {
+    "button": "default",
+    "state": "Menu channel1; Coupling DC; BW Limit Off; Volts/Div Coarse; Probe 10X; Invert Off; Running; Signal acquired; Default setup"
+  }
+]

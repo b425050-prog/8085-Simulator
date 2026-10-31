@@ -1,0 +1,66 @@
+.photographic .desk-viewport{background:#86482f url('assets/photographic/bench-wood.png') center/1100px 1100px repeat}.photographic .bench-grain{background:none}.photographic .bench-shadow{background:radial-gradient(ellipse at 50% 40%,transparent 30%,#2c170b24)}
+.photographic .photo-equipment{background:transparent;border:0;box-shadow:none;filter:drop-shadow(4px 13px 6px #271a135c)}.photographic .photo-equipment:before{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;background-image:url('assets/photographic/lab-equipment.png');background-size:var(--photo-width) var(--photo-height);background-position:var(--photo-x) var(--photo-y);background-repeat:no-repeat;border-radius:inherit}.photographic .photo-equipment:after{box-shadow:none}
+.photographic .trainer-case-side,.photographic .pcb-traces,.photographic .ic,.photographic .bolt,.photographic .silk,.photographic .kxt-bus,.photographic .empty-zif,.photographic .component-row,.photographic .battery,.photographic .crystal,.photographic .qc-sticker,.photographic .db9,.photographic .open-lid,.photographic .transistor,.photographic .metal-transistor,.photographic .scope-vents,.photographic .scope-foot,.photographic .scope-rating{visibility:hidden}
+.photographic .trainer-pcb,.photographic .module-pcb{background:none;border:0;box-shadow:none}.photographic .equipment-grip{background:none;border:0;box-shadow:none;color:transparent;z-index:12}.photographic .equipment-grip>span,.photographic .scope-brand strong,.photographic .scope-brand b,.photographic .scope-brand i{visibility:hidden}.photographic .equipment-grip button{color:#d3e0c7;opacity:0}.photographic .equipment-grip:hover button,.photographic .equipment-grip:focus-within button{opacity:1}.photographic .module-grip{background:#23332cf0;color:#d5dbc9;font-size:9px;letter-spacing:.3px;height:22px;top:3px;left:5px;right:5px}.photographic .module-grip>span{visibility:visible;color:#bfc9b5}
+.photographic .lcd-assembly{left:0!important;top:0!important;width:100%;height:100%;pointer-events:none}.photographic .lcd-pcb{background:none;border:0;box-shadow:none}.photographic .lcd-bezel{left:355px;top:457px;width:367px;height:82px;right:auto;bottom:auto;border:0;border-radius:0;box-shadow:inset 0 0 5px #173511;outline:0;pointer-events:auto}.photographic .lcd-bezel:focus-within{outline:1px solid #c3d3a0;outline-offset:2px}.photographic .lcd-bezel canvas{filter:brightness(.94) saturate(.75)}
+.photographic .board-key{background:none;border:0;box-shadow:none}.photographic .board-key>span{visibility:hidden}.photographic #trainer-vector{left:782px!important;top:482px!important}.photographic #trainer-reset{left:857px!important;top:485px!important}.photographic .board-key:hover,.photographic .board-key:focus-visible{outline:1px solid #f2d89c88}.photographic .board-key:active{background:#39291b50}.photographic .board-led:not(.on),.photographic .coil-led:not(.on){opacity:0}.photographic .board-switch{border-color:#90aa7b;background:#243823cc}.photographic .board-switch>span{font-size:6px}
+.photographic .frc-housing,.photographic .power-header>div,.photographic .ps2-socket{background:#18291b22;box-shadow:none;border-color:#afc89a77}.photographic .frc-pin{opacity:.45}.photographic .frc-connector:hover .frc-housing,.photographic .power-header:hover>div{outline:1px solid #dfd5a8}.photographic .frc-legend,.photographic .frc-connector small,.photographic .power-header small,.photographic .power-header>span{color:#dce2c7;text-shadow:0 1px 2px #18271c;font-size:6px}.photographic .jack{filter:drop-shadow(0 1px 1px #13271d60)}
+.photographic .scope-top{background:none;border:0;transform:none}.photographic .scope-display-bezel{left:76px;top:98px;width:350px;height:236px;padding:0;background:none;border:0;box-shadow:none;border-radius:0}.photographic .scope-display-bezel canvas{border:0;box-shadow:inset 0 0 5px #091d28;filter:contrast(.95) saturate(.9)}.photographic .scope-softkeys{left:462px;top:114px;gap:19px}.photographic .scope-softkeys>button{width:27px;height:24px;background:transparent;border:0;box-shadow:none}.photographic .scope-softkeys .menu-off{width:24px;height:24px;margin-top:2px}.photographic .scope-control-area .scope-zone,.photographic .scope-control-area .scope-save-led{visibility:hidden}.photographic .scope-button{background:transparent!important;border:0;box-shadow:none;color:transparent;padding:0}.photographic .scope-button>span{visibility:hidden}.photographic .scope-button:hover,.photographic .scope-softkeys>button:hover{outline:1px solid #e2c87688;background:#f1e5c322!important}.photographic .scope-button:active,.photographic .scope-softkeys>button:active{background:#27352740!important;box-shadow:inset 0 1px 3px #26372b88}.photographic .scope-button.run-stop.lit{box-shadow:0 0 1px 1px #7ca76244}.photographic .scope-control-area .knob-unit{margin-top:0}.photographic .scope-control-area .knob-unit>span{display:none}.photographic .scope-usb{left:72px;top:375px;width:335px;height:40px;background:transparent;border:0;box-shadow:none}.photographic .scope-usb>span{visibility:hidden}.photographic .scope-usb>i{opacity:0}.photographic .scope-usb.inserted>i{opacity:1}
+.photographic .rotary.photo-rotary{background:none;border:0;box-shadow:none}.photographic .rotary.photo-rotary:before{content:"";inset:0;border-radius:50%;border:0;box-shadow:none;background-image:url('assets/photographic/lab-equipment.png');background-repeat:no-repeat;background-size:var(--cap-width) var(--cap-height);background-position:var(--cap-x) var(--cap-y);transform:rotate(calc(var(--turn,-25deg) + 25deg));transition:transform .08s}.photographic .rotary.photo-rotary>i{display:none}.photographic .rotary.photo-rotary:hover{outline:1px solid #decb9390;outline-offset:1px}.photographic .module-pcb .knob-unit>span{font-size:5px}
+.photographic .keyboard-main,.photographic .keyboard-arrows,.photographic .keyboard-numpad{background:none}.photographic .keycap{color:transparent;background:transparent;box-shadow:none;border:0}.photographic .keycap:hover{background:#d4dbc32b;outline:1px solid #cbddaf44}.photographic .keycap:active,.photographic .keycap.pressed{background:#0d261861;box-shadow:inset 0 1px 3px #071b12}.photographic .keycap:disabled{cursor:default;background:none}.photographic .keyboard-locks{opacity:0}.photographic .keyboard-cord{background:#564961;border-color:#7f7882}
+.photographic .red-lamp:not(.on){opacity:0}.photographic .led-bank{left:48px;gap:11px}.photographic .bank-label,.photographic .led-position small{visibility:hidden}.photographic .led-bank output{background:#173126;color:#d0ddb7;border:0;font-size:12px;margin-left:14px}.photographic .red-lamp.on{width:13px;height:13px;opacity:.85}.photographic .motor-stator,.photographic .motor-face{background:none;border:0;box-shadow:none}.photographic .motor-stator>i,.photographic .motor-face>span,.photographic .motor-face>small,.photographic .motor-feet{visibility:hidden}.photographic .stepper-motor{top:99px;filter:none}.photographic .motor-rotor{background:none;border:0;box-shadow:none}.photographic .motor-rotor>i{box-shadow:1px 1px 2px #271a1877}
+.photographic .source-display{background:#263b2d;border-color:#4b6350}.photographic .power-strip>span{visibility:hidden}.photographic .power-strip{padding-top:6px}.photographic .ac-outlet{background:#c4b79240;opacity:.6}.photographic .bench-label{opacity:.35}
+.photographic .led-pcb:before{content:"";position:absolute;left:310px;top:20px;width:79px;height:190px;background:linear-gradient(110deg,#1a6544,#1c5d3f 45%,#1a5c3d);border-radius:2px;z-index:0}.photographic .led-bank{z-index:2}.photographic .bank-label{visibility:visible;color:#cbd8be;font:9px Consolas;left:-29px}.photographic .scope-case .bnc{background:none;border:0;box-shadow:none}.photographic .scope-case .bnc>i{visibility:hidden}.photographic .scope-case .bnc>span{color:#3e4939;font-size:7px}.photographic .scope-case .bnc:hover{outline:1px solid #d8c88a;border-radius:50%}.photographic .scope-control-area .scope-save-led{visibility:visible;left:514px;top:129px;width:9px;height:9px;background:#77765c;box-shadow:none}.photographic .scope-case.instrument-on .scope-save-led{background:#bce45b;box-shadow:0 0 4px #a4d66c}
+
+/* Detailed skins reconstructed from the six additional lab photographs. */
+.photographic #equipment-trainer:before{background-image:url('assets/photographic/trainer-detail.png');background-size:100% 100%;background-position:0 0;clip-path:inset(3.5% 1.4% 2.7% round 20px)}
+.photographic #equipment-motor:before{background-image:url('assets/photographic/motor-detail.png');background-size:100% 100%;background-position:0 0;clip-path:inset(3.1% 1.7% 3% round 16px)}
+.photographic .trainer-pcb .lcd-bezel{left:360px;top:469px;width:328px;height:67px;border-radius:3px;box-shadow:inset 0 0 4px #192d0f}
+.photographic #trainer-vector{left:754px!important;top:490px!important;width:51px;height:50px}
+.photographic #trainer-reset{left:818px!important;top:490px!important;width:55px;height:50px}
+.photographic .trainer-pcb .frc-housing,.photographic .motor-pcb .frc-housing{width:100%}
+.photographic .trainer-pcb [data-connector="trainer.power"]{transform:rotate(90deg);transform-origin:center 14px}
+.photographic .trainer-pcb .ps2-socket{border:0;background:none;box-shadow:none}
+.photographic .trainer-pcb .ps2-socket>i{visibility:hidden}
+.photographic .trainer-pcb .ps2-socket>span{left:7px;top:57px;transform:none;font-size:7px}
+.photographic .trainer-pcb .pit-header{opacity:.6}
+.photographic .motor-pcb{left:32px;top:53px;width:281px;height:204px}
+.photographic .motor-pcb .power-header>div{gap:1px;padding:3px;height:26px}
+.photographic .motor-pcb .power-header button{width:7px;height:12px}
+.photographic .motor-pcb .power-header>span{font-size:5px;top:-8px}
+.photographic .motor-pcb .power-header>small{left:12px;top:28px}
+.photographic #equipment-motor .stepper-motor{left:0;top:0;right:auto;width:100%;height:100%;pointer-events:none}
+.photographic #equipment-motor .motor-stator,.photographic #equipment-motor .motor-face{inset:0;padding:0}
+.photographic #equipment-motor .motor-rotor{left:354.5px;top:136px;width:35px;height:35px;background:url('assets/photographic/motor-detail.png') -354.5px -136px/455px 302px no-repeat;border:0;border-radius:50%;box-shadow:none}
+.photographic #equipment-motor .motor-rotor>i{display:none}
+.photographic .trainer-pcb .lcd-bezel canvas{filter:none}
+.photographic #equipment-led:before{background-image:url('assets/photographic/led-detail.png');background-size:100% 100%;background-position:0 0;clip-path:inset(3.5% 1.7% 3% round 13px)}
+.photographic .led-pcb:before{display:none}
+.photographic .led-pcb .frc-housing{width:100%}
+.photographic .led-pcb .led-bank{left:47px;gap:14.6px;height:20px}
+.photographic .led-pcb .led-position{width:20px;height:20px;flex:none}
+.photographic .led-pcb .led-position.nibble-divider{margin-left:0}
+.photographic .led-pcb .red-lamp.on{width:20px;height:20px;opacity:.72;box-shadow:0 0 9px 2px #ff432f90;border:0}
+.photographic .led-pcb .led-bank output{position:absolute;left:281px;top:0;width:40px;margin:0;padding:0;text-align:center;background:none;font-size:16px;color:#e3eabb;text-shadow:0 1px 2px #164129}
+.photographic .led-pcb .bank-label{display:none}
+.photographic #equipment-led:before{background-image:url('assets/photographic/sc01-study-card.png');clip-path:inset(.7% .4% 1% round 12px)}
+.photographic .led-pcb .led-bank{display:contents}
+.photographic .led-pcb .led-position{display:contents}
+.photographic .led-pcb .red-lamp,.photographic .led-pcb .study-indicator{position:absolute;z-index:4;pointer-events:auto}
+.photographic .led-pcb .red-lamp.on{width:12px;height:12px;opacity:.8;background:radial-gradient(circle at 45% 40%,#fff4c7,#ff632f 48%,#dd2213 85%);box-shadow:0 0 5px 2px #ff432f80}
+.photographic .led-pcb .led-position small{display:none}
+.photographic .led-pcb .led-bank output{left:auto;top:auto;width:29px;font-size:12px;background:#174e3dd9;border-radius:2px;padding:1px}
+.photographic #id-value-0{left:218px;top:205px}
+.photographic #id-value-1{left:329px;top:-6px}
+.photographic #id-value-2{left:366px;top:145px}
+.photographic .led-pcb .power-header{transform:scale(.36);transform-origin:0 0;opacity:.45}
+.photographic .led-pcb .power-header>span,.photographic .led-pcb .power-header>small{display:none}
+.photographic .led-pcb .frc-housing{gap:1px}
+.photographic .bus-connector .frc-housing{width:100%;grid-template-columns:repeat(25,1fr);gap:1px;background:none;box-shadow:none}
+.photographic .bus-connector .frc-legend{font-size:5px;top:-8px}
+.photographic .study-control{position:absolute;border:0;background:none;box-shadow:none;z-index:9;cursor:pointer;border-radius:2px;padding:0}
+.photographic #study-clock{left:14px;top:182px;width:40px;height:19px}
+.photographic #study-step{left:66px;top:182px;width:49px;height:20px}
+.photographic .study-control:hover{outline:1px solid #e4d68a}
+.photographic #study-clock.step-on:before{content:"";position:absolute;left:22px;top:3px;width:12px;height:12px;background:linear-gradient(110deg,#4c5045,#111d16);border:1px solid #898d77}
+.photographic #study-step:active{background:#1a271b55;box-shadow:inset 0 1px 3px #17231b}
